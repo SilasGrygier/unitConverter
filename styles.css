@@ -1,0 +1,67 @@
+:root {
+  /* @link https://utopia.fyi/type/calculator?c=360,16,1.2,1440,21,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  /* Fonts */
+  --step--2: clamp(0.6944rem, 0.6459rem + 0.2156vw, 0.84rem);
+  --step--1: clamp(0.8333rem, 0.7611rem + 0.321vw, 1.05rem);
+  --step-0: clamp(1rem, 0.8958rem + 0.463vw, 1.3125rem);
+  --step-1: clamp(1.2rem, 1.0531rem + 0.6528vw, 1.6406rem);
+  --step-2: clamp(1.44rem, 1.2364rem + 0.9049vw, 2.0508rem);
+  --step-3: clamp(1.728rem, 1.4495rem + 1.2377vw, 2.5635rem);
+  --step-4: clamp(2.0736rem, 1.6967rem + 1.6752vw, 3.2043rem);
+  --step-5: clamp(2.4883rem, 1.9826rem + 2.2476vw, 4.0054rem);
+
+  /* Space pairs */
+  /* @link https://utopia.fyi/space/calculator?c=360,16,1.2,1440,21,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  --space-3xs: clamp(0.25rem, 0.2292rem + 0.0926vw, 0.3125rem);
+  --space-2xs: clamp(0.5rem, 0.4375rem + 0.2778vw, 0.6875rem);
+  --space-xs: clamp(0.75rem, 0.6667rem + 0.3704vw, 1rem);
+  --space-s: clamp(1rem, 0.8958rem + 0.463vw, 1.3125rem);
+  --space-m: clamp(1.5rem, 1.3333rem + 0.7407vw, 2rem);
+  --space-l: clamp(2rem, 1.7917rem + 0.9259vw, 2.625rem);
+  --space-xl: clamp(3rem, 2.6875rem + 1.3889vw, 3.9375rem);
+  --space-2xl: clamp(4rem, 3.5833rem + 1.8519vw, 5.25rem);
+  --space-3xl: clamp(6rem, 5.375rem + 2.7778vw, 7.875rem);
+
+  /* Colors */
+
+  /* Backgrounds */
+  --color-bg-header: #6943ff;
+  --color-bg-main: #1f2937;
+  --color-bg-section: #273549;
+
+  /* Text */
+  --color-text-primary: white;
+  --color-text-secondary: #ccc1ff;
+  --color-text-dark: #3d3d3d;
+
+  /* Borders/Accents */
+  --color-border-primary: #b295ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter", sans-serif;
+}
+
+.converter-header {
+}
+
+.conversion-results {
+}
+
+.title {
+}
