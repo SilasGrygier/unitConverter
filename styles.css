@@ -36,6 +36,10 @@
 
   /* Borders/Accents */
   --color-border-primary: #b295ff;
+
+  /* Effects */
+  --shadow-glow-light: 0 0 8px 2px rgba(255, 255, 255, 0.3);
+  --shadow-glow-dark: 0 0 8px 2px rgba(13, 13, 13, 0.2);
 }
 
 * {
@@ -55,13 +59,103 @@ body {
   display: flex;
   flex-direction: column;
   font-family: "Inter", sans-serif;
+  color: var(--color-text-primary);
 }
 
 .converter-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-bg-header);
+  min-height: 200px;
+  gap: var(--space-m);
+  padding: var(--space-l) var(--space-m);
 }
 
 .conversion-results {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
 }
 
 .title {
+  font-size: var(--step-4);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.user-input {
+  font-size: var(--step-4);
+  font-weight: 800;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  width: clamp(120px, 15vw, 180px); /* Responsive width */
+  padding: var(--space-xs) var(--space-s);
+  border: solid 3px var(--color-border-primary);
+  border-radius: 5px;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-header);
+  transition: border-color 0.3s ease background-color 0.3s ease;
+}
+
+/* Remove default arrow styling */
+.user-input[type="number"]::-webkit-outer-spin-button,
+.user-input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove default browser black outline styling when user focus on element */
+.user-input:focus,
+.convert-btn:focus {
+  outline: none;
+}
+
+/* Style by changing the border and not outline to avoid breaking layouts */
+.user-input:focus-visible {
+  border-color: var(--color-text-primary);
+  box-shadow: var(--shadow-glow-light);
+}
+
+.user-input:hover:not(:focus) {
+  border-color: var(--color-text-secondary);
+}
+
+.convert-btn {
+  font-size: var(--step-0);
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-text-dark);
+  background-color: var(--color-text-primary);
+  width: clamp(120px, 15vw, 180px);
+  border-radius: 5px;
+  border: none;
+  box-shadow: var(--shadow-glow-dark);
+  padding: var(--space-xs) var(--space-s);
+  cursor: pointer;
+  touch-action: manipulation;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.convert-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px 3px rgba(13, 13, 13, 0.45);
+}
+
+.convert-btn:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-glow-dark);
+}
+
+.convert-btn:focus-visible {
+  box-shadow:
+    var(--shadow-glow-dark),
+    0 0 8px 3px rgba(0, 0, 0, 0.39);
 }
