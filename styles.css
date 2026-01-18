@@ -69,37 +69,45 @@ body {
   align-items: center;
   background-color: var(--color-bg-header);
   min-height: 200px;
-  gap: var(--space-m);
-  padding: var(--space-l) var(--space-m);
+  gap: var(--space-s);
+  padding: var(--space-m) var(--space-m);
 }
 
 .conversion-results {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: var(--space-m);
+  color: var(--color-text-dark);
+  background-color: var(--color-bg-main);
+  gap: var(--space-s);
+  padding: var(--space-m) var(--space-m);
 }
 
 .title {
-  font-size: var(--step-4);
+  font-size: var(--step-3);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   font-weight: 600;
   line-height: 1.2;
 }
 
 .user-input {
-  font-size: var(--step-4);
+  font-size: var(--step-1);
   font-weight: 800;
   font-family: "Inter", sans-serif;
   text-align: center;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  width: clamp(120px, 15vw, 180px); /* Responsive width */
+  width: clamp(7.5rem, 15vw, 11.25rem); /* Responsive width */
+  /* WCAG compliance */
+  min-height: 44px;
   padding: var(--space-xs) var(--space-s);
   border: solid 3px var(--color-border-primary);
   border-radius: 5px;
   color: var(--color-text-primary);
   background-color: var(--color-bg-header);
-  transition: border-color 0.3s ease background-color 0.3s ease;
+  caret-color: var(--color-text-primary);
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease;
 }
 
 /* Remove default arrow styling */
@@ -128,16 +136,18 @@ body {
 .convert-btn {
   font-size: var(--step-0);
   font-family: "Inter", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.5;
   color: var(--color-text-dark);
   background-color: var(--color-text-primary);
-  width: clamp(120px, 15vw, 180px);
+  width: clamp(7.5rem, 15vw, 11.25rem);
   border-radius: 5px;
   border: none;
   box-shadow: var(--shadow-glow-dark);
   padding: var(--space-xs) var(--space-s);
   cursor: pointer;
+  /* WCAG compliance */
+  min-height: 44px;
   touch-action: manipulation;
   transition:
     transform 0.2s ease,
@@ -157,5 +167,32 @@ body {
 .convert-btn:focus-visible {
   box-shadow:
     var(--shadow-glow-dark),
-    0 0 8px 3px rgba(0, 0, 0, 0.39);
+    0 0 10px 6px rgba(0, 0, 0, 0.49);
+}
+
+.result-card {
+  flex: 1;
+  padding: var(--space-s) var(--space-s);
+  background-color: var(--color-bg-section);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-xs);
+  border-radius: 5px;
+}
+
+.result-title {
+  font-size: var(--step-1);
+  line-height: 1;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  color: var(--color-text-secondary);
+}
+
+.result-text {
+  font-size: var(--step-0);
+  line-height: 1.4;
+  font-weight: 400;
+  color: var(--color-text-primary);
 }
